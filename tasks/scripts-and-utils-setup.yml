@@ -12,7 +12,7 @@
 - name: Scripts - clone from github
   ansible.builtin.git:
     accept_hostkey: true
-    repo: 'git@github.com:adelgado0723/scripts_mac.git'
+    repo: 'https://github.com/adelgado0723/scripts_mac.git'
     dest: '{{ home }}/scripts/'
   tags:
     - wsl
@@ -43,7 +43,7 @@
 - name: Wallpapers - clone from github
   ansible.builtin.git:
     accept_hostkey: true
-    repo: 'git@github.com:adelgado0723/wallpapers.git'
+    repo: 'https://github.com/adelgado0723/wallpapers.git'
     dest: '{{ home }}/wallpapers/wallpapers_public'
   tags:
     - wsl
@@ -53,7 +53,7 @@
 - name: Distrotube Wallpapers - clone from github
   ansible.builtin.git:
     accept_hostkey: true
-    repo: 'git@gitlab.com:dwt1/wallpapers.git'
+    repo: 'https://gitlab.com/dwt1/wallpapers.git'
     dest: '{{ home }}/wallpapers/dt_wallpapers'
   tags:
     - wsl
