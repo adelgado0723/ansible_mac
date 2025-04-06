@@ -1,0 +1,9 @@
+- name: Create folder if it doesn't exist - ~/notes
+  ansible.builtin.file:
+    path: '{{ home }}/notes/'
+    state: directory
+    mode: 0755
+    owner: '{{ user }}'
+  tags:
+    - wsl
+    - notes

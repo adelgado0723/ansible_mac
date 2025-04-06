@@ -1,0 +1,251 @@
+# LSP Setup - https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+#
+# "sumneko_lua"
+- name: Clone sumneko lua lsp
+  ansible.builtin.git:
+    repo: 'git@github.com:sumneko/lua-language-server.git'
+    recursive: true
+    dest: '{{ home }}/sumneko'
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Build sumenko lua lsp
+  ansible.builtin.command: ./compile/install.sh
+  args:
+    chdir: '{{ home }}/sumneko/3rd/luamake'
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Rebuild using luamake
+  ansible.builtin.shell:
+    cmd: ./3rd/luamake/luamake rebuild
+    chdir: '{{ home }}/sumneko/'
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# https://github.com/hrsh7th/vscode-langservers-extracted
+- name: Install vscode langservers (jsonls, html,  eslint  server)
+  ansible.builtin.npm:
+    name: vscode-langservers-extracted
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# "pyright"
+- name: Install pyright server
+  ansible.builtin.pip:
+    name: pyright
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# "gopls"
+# - name: Install gopls
+#   ansible.builtin.command: '{{ go_bin_path }}/go install golang.org/x/tools/gopls@latest'
+#   tags:
+    # - wsl
+#     - install
+#     - lsp
+#
+# "golangci_lint_ls"
+- name: Install golangci_lint_ls
+  ansible.builtin.command: '{{ go_bin_path }}/go install github.com/nametake/golangci-lint-langserver@latest'
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Install golangci_lint
+  ansible.builtin.shell: 'curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v{{ golangci_lint_version }}'
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# "clangd" # installed in core setup
+# "dockerls"
+- name: Install dockerls
+  ansible.builtin.npm:
+    name: dockerfile-language-server-nodejs
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# "svelte"
+- name: Install svelte server
+  ansible.builtin.npm:
+    name: svelte-language-server
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# "tsserver"
+- name: Install Typescript server
+  ansible.builtin.npm:
+    name: typescript-language-server
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# "bashls"
+- name: Install bashls
+  ansible.builtin.npm:
+    name: bash-language-server
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# "sqlls"
+- name: Install sqlls
+  ansible.builtin.npm:
+    name: sql-language-server
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# "yamlls"
+- name: Install yamlls
+  ansible.builtin.command: yarn global add yaml-language-server
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# null_ls
+# prettier - formatting
+- name: Install prettier formatter
+  ansible.builtin.npm:
+    name: prettier
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# black - formatting
+- name: Install black python formatter
+  ansible.builtin.pip:
+    name: black
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# ansiblels
+- name: Install ansiblels
+  ansible.builtin.npm:
+    name: ansible-language-server
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+# ansible-lint
+- name: Install ansible-lint
+  ansible.builtin.pip:
+    name: ansible-lint
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Install markdownlint-cli
+  ansible.builtin.npm:
+    name: markdownlint-cli
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Install prettierd
+  ansible.builtin.npm:
+    name: '@fsouza/prettierd'
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Install eslint_d
+  ansible.builtin.npm:
+    name: eslint_d
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Install flake8
+  ansible.builtin.pip:
+    name: flake8
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Install spectral (yaml and json)
+  ansible.builtin.npm:
+    name: '@stoplight/spectral-cli'
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Install prismals
+  ansible.builtin.npm:
+    name: '@prisma/language-server'
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Install emmet-ls
+  ansible.builtin.npm:
+    name: 'emmet-ls'
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Install astro ls
+  ansible.builtin.npm:
+    name: '@astrojs/language-server'
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Install docker compose ls
+  ansible.builtin.npm:
+    name: '@microsoft/compose-language-service'
+    global: true
+  tags:
+    - wsl
+    - install
+    - lsp
+

@@ -1,0 +1,35 @@
+# Node.js
+node_modules/
+.npm/
+npm-debug.log*
+
+# Python
+.mypy_cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+ENV/
+
+# Ansible
+*.retry
+ansible-vault
+vault.yml
+secrets.yml
+*.vault
+
+# Sensitive files
+*.pem
+*.key
+*.env
+*.secret
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,61 @@
+- name: Scripts - create folder if it doesn't exist
+  ansible.builtin.file:
+    path: '{{ home }}/scripts/'
+    state: directory
+    mode: 0755
+    owner: '{{ user }}'
+  tags:
+    - wsl
+    - install
+    - scripts-setup
+
+- name: Scripts - clone from github
+  ansible.builtin.git:
+    accept_hostkey: true
+    repo: 'git@github.com:adelgado0723/scripts_mac.git'
+    dest: '{{ home }}/scripts/'
+  tags:
+    - wsl
+    - install
+    - scripts-setup
+
+- name: Scripts - install
+  become: true
+  ansible.builtin.command: make install
+  args:
+    chdir: '{{ home }}/scripts/'
+  tags:
+    - wsl
+    - install
+    - scripts-setup
+
+- name: Wallpapers - create folder if it doesn't exist
+  ansible.builtin.file:
+    path: '{{ home }}/wallpapers'
+    state: directory
+    mode: 0755
+    owner: '{{ user }}'
+  tags:
+    - wsl
+    - install
+    - scripts-setup
+
+- name: Wallpapers - clone from github
+  ansible.builtin.git:
+    accept_hostkey: true
+    repo: 'git@github.com:adelgado0723/wallpapers.git'
+    dest: '{{ home }}/wallpapers/wallpapers_public'
+  tags:
+    - wsl
+    - install
+    - scripts-setup
+
+- name: Distrotube Wallpapers - clone from github
+  ansible.builtin.git:
+    accept_hostkey: true
+    repo: 'git@gitlab.com:dwt1/wallpapers.git'
+    dest: '{{ home }}/wallpapers/dt_wallpapers'
+  tags:
+    - wsl
+    - install
+    - scripts-setup

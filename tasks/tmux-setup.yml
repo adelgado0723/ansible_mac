@@ -1,0 +1,47 @@
+
+- name: Install tmux
+  community.general.homebrew:
+    name: tmux
+    state: present
+  tags:
+    - mac-setup
+    - tmux
+
+- name: create tpm plugins folder if it doesn't exist
+  file:
+    path: '{{ home }}/.tmux/plugins/'
+    state: directory
+    mode: 0755
+    owner: '{{ user }}'
+  tags:
+    - wsl
+    - install
+    - dotfiles
+    - tmux
+
+- name: clone tpm
+  ansible.builtin.git:
+    repo: 'git@github.com:tmux-plugins/tpm.git'
+    dest: '{{ home }}/.tmux/plugins/tpm'
+  tags:
+    - wsl
+    - install
+    - dotfiles
+    - tmux
+
+- name: source tmux config
+  shell: 'tmux source {{ home }}/.tmux.conf'
+  tags:
+    - wsl
+    - install
+    - dotfiles
+    - tmux
+
+- name: install tpm plugins
+  shell: '{{ home }}/.tmux/plugins/tpm/bin/install_plugins'
+  tags:
+    - wsl
+    - install
+    - dotfiles
+    - tmux
+

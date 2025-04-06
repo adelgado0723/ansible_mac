@@ -1,0 +1,86 @@
+# Depends on node being installed already
+- name: Install Yarn
+  npm:
+    name: yarn
+    global: true
+  tags:
+    - wsl
+    - npm-packages
+
+- name: Install eslint
+  npm:
+    name: eslint
+    global: true
+  tags:
+    - wsl
+    - npm-packages
+
+- name: Install Typescript
+  npm:
+    name: typescript
+    global: true
+  tags:
+    - wsl
+    - npm-packages
+
+- name: Install TS-Node
+  npm:
+    name: ts-node
+    global: true
+  tags:
+    - wsl
+    - npm-packages
+
+- name: Install webpack
+  npm:
+    name: webpack
+    global: true
+  tags:
+    - wsl
+    - npm-packages
+
+- name: Install husky
+  npm:
+    name: husky
+    global: true
+  tags:
+    - wsl
+    - npm-packages
+
+- name: Install live-server
+  npm:
+    name: live-server
+    global: true
+  tags:
+    - wsl
+    - npm-packages
+
+- name: Install pm2
+  npm:
+    name: pm2
+    global: true
+  tags:
+    - wsl
+    - npm-packages
+
+- name: pm2 update
+  become: true
+  ansible.builtin.command: pm2 update
+  tags:
+    - wsl
+    - npm-packages
+
+- name: pm2 completion install
+  become: true
+  ansible.builtin.command: pm2 completion install
+  tags:
+    - wsl
+    - npm-packages
+
+- name: install jest
+  npm:
+    name: jest
+    global: true
+  tags:
+    - wsl
+    - npm-packages

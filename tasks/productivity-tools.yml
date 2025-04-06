@@ -1,0 +1,28 @@
+
+- name: Install wireshark - Mac
+  community.general.homebrew:
+    name: wireshark
+    state: present
+  tags:
+    - mac-setup
+    - productivity
+
+- name: Install libreoffice - Mac
+  ansible.builtin.command: 'brew install --cask libreoffice'
+  tags:
+    - mac-setup
+    - productivity
+
+- name: Install flameshot - Mac
+  ansible.builtin.command: 'brew install --cask flameshot'
+  tags:
+    - mac-setup
+    - productivity
+
+- name: Install xclip - Mac
+  community.general.homebrew:
+    name: xclip
+    state: present
+  tags:
+    - mac-setup
+    - productivity
