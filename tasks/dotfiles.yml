@@ -10,7 +10,7 @@
 
 - name: Cloning dotfiles
   ansible.builtin.git:
-    repo: 'https://github.com/adelgado0723/dotfiles_mac.git'
+    repo: 'https://github.com/adelgado0723/.dotfiles_mac.git'
     bare: false
     dest: '{{ home }}/.dotfiles'
   tags:

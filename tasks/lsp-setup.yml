@@ -1,29 +1,38 @@
 # LSP Setup - https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 #
-# "sumneko_lua"
-- name: Clone sumneko lua lsp
-  ansible.builtin.git:
-    repo: 'https://github.com/sumneko/lua-language-server.git'
-    recursive: true
-    dest: '{{ home }}/sumneko'
+# treesitter
+- name: Treesitter
+  ansible.builtin.npm:
+    name: tree-sitter-cli
+    global: true
   tags:
     - wsl
     - install
     - lsp
 
-- name: Build sumenko lua lsp
-  ansible.builtin.command: ./compile/install.sh
-  args:
-    chdir: '{{ home }}/sumneko/3rd/luamake'
+# "Lua"
+- name: Lua LSP
+  community.general.homebrew:
+    name: lua-language-server
+    state: present
   tags:
     - wsl
     - install
     - lsp
 
-- name: Rebuild using luamake
-  ansible.builtin.shell:
-    cmd: ./3rd/luamake/luamake rebuild
-    chdir: '{{ home }}/sumneko/'
+- name: Lua jit
+  community.general.homebrew:
+    name: luajit
+    state: present
+  tags:
+    - wsl
+    - install
+    - lsp
+
+- name: Lua rocks
+  community.general.homebrew:
+    name: luarocks
+    state: present
   tags:
     - wsl
     - install

@@ -34,69 +34,84 @@
 #     - install
 #     - fonts
 
-- name: Install fantasque sans mono font
-  ansible.builtin.command: curl -fLo "Fantasque Sans Mono Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/FantasqueSansMono/Regular/FantasqueSansMNerdFont-Regular.ttf 
-  args:
-    chdir: '/Library/Fonts'
-  tags:
-    - install
-    - fonts
-
-- name: Install fantasque sans mono font - italic
-  ansible.builtin.command: curl -fLo "Fantasque Sans Mono Italic Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/FantasqueSansMono/Italic/FantasqueSansMNerdFont-Italic.ttf
-  args:
-    chdir: '/Library/Fonts'
-  tags:
-    - install
-    - fonts
+# broken url
+#- name: Install fantasque sans mono font
+#  ansible.builtin.command: curl -fLo "Fantasque Sans Mono Regular Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/FantasqueSansMono/Regular/FantasqueSansMNerdFont-Regular.ttf 
+#  args:
+#    chdir: '/Library/Fonts'
+#  tags:
+#    - install
+#    - fonts
 #
-- name: Install fantasque sans mono font - bold
-  ansible.builtin.command: curl -fLo "Fantasque Sans Mono Bold Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/FantasqueSansMono/Bold/FantasqueSansMNerdFont-Bold.ttf
-  args:
-    chdir: '/Library/Fonts'
-  tags:
-    - install
-    - fonts
 
-- name: Install fantasque sans mono font - bold-italic
-  ansible.builtin.command: curl -fLo "Fantasque Sans Mono Bold Italic Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/FantasqueSansMono/Bold-Italic/FantasqueSansMNerdFont-Bold-Italic.ttf
-  args:
-    chdir: '/Library/Fonts'
-  tags:
-    - install
-    - fonts
+# broken url
+#- name: Install fantasque sans mono font - italic
+#  ansible.builtin.command: curl -fLo "Fantasque Sans Mono Italic Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/FantasqueSansMono/Italic/FantasqueSansMNerdFont-Italic.ttf
+#  args:
+#    chdir: '/Library/Fonts'
+#  tags:
+#    - install
+#    - fonts
+##
 
-- name: Install hack nerd font
-  ansible.builtin.command: curl -fLo "Hack Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
-  args:
-    chdir: '/Library/Fonts'
-  tags:
-    - install
-    - fonts
+# broken url
+#- name: Install fantasque sans mono font - bold
+#  ansible.builtin.command: curl -fLo "Fantasque Sans Mono Bold Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/FantasqueSansMono/Bold/FantasqueSansMNerdFont-Bold.ttf
+#  args:
+#    chdir: '/Library/Fonts'
+#  tags:
+#    - install
+#    - fonts
+#
 
-- name: Install hack nerd font - bold
-  ansible.builtin.command: curl -fLo "Hack Bold Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Bold/complete/Hack%20Bold%20Nerd%20Font%20Complete%20Mono.ttf
-  args:
-    chdir: '/Library/Fonts'
-  tags:
-    - install
-    - fonts
+# broken url
+#- name: Install fantasque sans mono font - bold-italic
+#  ansible.builtin.command: curl -fLo "Fantasque Sans Mono Bold Italic Nerd Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/refs/heads/master/patched-fonts/FantasqueSansMono/Bold-Italic/FantasqueSansMNerdFont-Bold-Italic.ttf
+#  args:
+#    chdir: '/Library/Fonts'
+#  tags:
+#    - install
+#    - fonts
+#
 
-- name: Install hack nerd font - italic
-  ansible.builtin.command: curl -fLo "Hack Italic Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Italic/complete/Hack%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
-  args:
-    chdir: '/Library/Fonts'
-  tags:
-    - install
-    - fonts
+# broken url
+#- name: Install hack nerd font
+#  ansible.builtin.command: curl -fLo "Hack Regular Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf
+#  args:
+#    chdir: '/Library/Fonts'
+#  tags:
+#    - install
+#    - fonts
 
-- name: Install hack nerd font - bold italic
-  ansible.builtin.command: curl -fLo "Hack Bold Italic Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/BoldItalic/complete/Hack%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
-  args:
-    chdir: '/Library/Fonts'
-  tags:
-    - install
-    - fonts
+
+## broken url
+#- name: Install hack nerd font - bold
+#  ansible.builtin.command: curl -fLo "Hack Bold Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Bold/complete/Hack%20Bold%20Nerd%20Font%20Complete%20Mono.ttf
+#  args:
+#    chdir: '/Library/Fonts'
+#  tags:
+#    - install
+#    - fonts
+#
+#
+## broken url
+#- name: Install hack nerd font - italic
+#  ansible.builtin.command: curl -fLo "Hack Italic Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Italic/complete/Hack%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
+#  args:
+#    chdir: '/Library/Fonts'
+#  tags:
+#    - install
+#    - fonts
+#
+#
+## broken url
+#- name: Install hack nerd font - bold italic
+#  ansible.builtin.command: curl -fLo "Hack Bold Italic Nerd Font Complete Mono.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/BoldItalic/complete/Hack%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf
+#  args:
+#    chdir: '/Library/Fonts'
+#  tags:
+#    - install
+#    - fonts
 
 - name: Install fira mono nerd font
   ansible.builtin.command: curl -fLo "Fura Mono Regular Nerd Font Complete Mono.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraMono/Regular/complete/Fura%20Mono%20Regular%20Nerd%20Font%20Complete%20Mono.otf

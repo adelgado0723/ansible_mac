@@ -40,15 +40,15 @@
     - install
     - scripts-setup
 
-- name: Wallpapers - clone from github
-  ansible.builtin.git:
-    accept_hostkey: true
-    repo: 'https://github.com/adelgado0723/wallpapers.git'
-    dest: '{{ home }}/wallpapers/wallpapers_public'
-  tags:
-    - wsl
-    - install
-    - scripts-setup
+# - name: Wallpapers - clone from github
+#   ansible.builtin.git:
+#     accept_hostkey: true
+#     repo: 'https://github.com/adelgado0723/wallpapers.git'
+#     dest: '{{ home }}/wallpapers/wallpapers_public'
+#   tags:
+#     - wsl
+#     - install
+#     - scripts-setup
 
 - name: Distrotube Wallpapers - clone from github
   ansible.builtin.git:

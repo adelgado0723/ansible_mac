@@ -29,13 +29,13 @@
     - dotfiles
     - tmux
 
-- name: source tmux config
-  shell: 'tmux source {{ home }}/.tmux.conf'
-  tags:
-    - wsl
-    - install
-    - dotfiles
-    - tmux
+# - name: source tmux config
+#   shell: 'tmux source {{ home }}/.tmux.conf'
+#   tags:
+#     - wsl
+#     - install
+#     - dotfiles
+#     - tmux
 
 - name: install tpm plugins
   shell: '{{ home }}/.tmux/plugins/tpm/bin/install_plugins'
