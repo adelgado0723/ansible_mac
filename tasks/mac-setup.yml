@@ -266,6 +266,13 @@
   tags:
     - mac-setup
 
+- name: Install Kotlin
+  community.general.homebrew:
+    name: kotlin
+    state: present
+  tags:
+    - mac-setup
+
 - name: Install GitHub CLI
   community.general.homebrew:
     name: gh
