@@ -26,3 +26,9 @@
   tags:
     - mac-setup
     - productivity
+
+- name: Install sdkman
+  ansible.builtin.command: 'curl -s "https://get.sdkman.io" | bash'
+  tags:
+    - mac-setup
+    - productivity
